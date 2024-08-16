@@ -112,10 +112,10 @@ void SerialSendCmd(unsigned char *cmdHex, int *cmdDec, int size){
         newLineFlag = 0; // reset the flag for the next input detection
     }
 
-    for (uint16_t i = 0; i < epcListSize; i++){
+    for (uint16_t i = 0; i < epcListSize; i++){ // iterate through the card list
         int ledFlag = 1; // set ledflag
         for (uint16_t j = 0; j < 12; j++){
-            if((*(outputEPC + j)) != *(((epcList + i) -> epc) + j)){ 
+            if((*(outputEPC + j)) != *(((epcList + i) -> epc) + j)){ // check each hex digit to match with card i's EPC
                 ledFlag = 0; // do not turn on the number i led when EPC does not match
                 break;
             }
