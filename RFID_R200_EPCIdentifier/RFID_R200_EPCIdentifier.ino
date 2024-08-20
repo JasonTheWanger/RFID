@@ -25,7 +25,7 @@ void setup() {
 void loop() { 
 
     SerialSendCmd(cmd -> readCmd, cmd -> readCmdDec, cmd -> size); // Calls to the function to send and receive messages from the module
-    delay(50); // Time break between each read
+    delay(20); // Time break between each read
     updateLEDs(0b00000000); // close all the leds 
     leds=0b0; // led memory, refresh on every loop to clear previous lightened leds memory
 }
